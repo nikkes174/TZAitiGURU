@@ -38,6 +38,8 @@ skip-string-normalization = true
 [tool.ruff]
 line-length = 79
 fix = true
+
+[tool.ruff.lint]
 select = ["E", "F", "I", "UP", "ASYNC"]
 ignore = ["E501"]
 
@@ -45,6 +47,7 @@ ignore = ["E501"]
 quote-style = "double"
 indent-style = "space"
 line-ending = "auto"
+
 
 [tool.flake8]
 max-line-length = 79

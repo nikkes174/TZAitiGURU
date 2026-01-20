@@ -1,5 +1,3 @@
-from typing import List
-
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -25,7 +23,7 @@ async def create_category(
 
 @router.get(
     "/reports/children-count",
-    response_model=List[CategoryChildrenCount],
+    response_model=list[CategoryChildrenCount],
 )
 async def children_count(db: AsyncSession = Depends(get_db)):
     service = CategoryService(db)

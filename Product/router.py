@@ -1,5 +1,3 @@
-from typing import List
-
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -29,7 +27,7 @@ async def list_products(
 
 @router.get(
     "/reports/top-5-last-month",
-    response_model=List[TopProductReport],
+    response_model=list[TopProductReport],
 )
 async def top_5_products(
     db: AsyncSession = Depends(get_db),
