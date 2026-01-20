@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "tz-aitiguru"
+version = "0.1.0"
+description = "Test task: FastAPI + Async SQLAlchemy + PostgreSQL"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+fastapi = "^0.111.0"
+uvicorn = { extras = ["standard"], version = "^0.30.0" }
+
+sqlalchemy = "^2.0"
+asyncpg = "^0.29.0"
+alembic = "^1.17.2"
+
+python-dotenv = "^1.0.1"
+pydantic-settings = "^2.12.0"
+
+python-multipart = "^0.0.9"
+aiosqlite = "^0.22.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+ruff = "^0.8.4"
+flake8 = "^7.0.0"
+
+pytest = "^9.0.2"
+pytest-asyncio = "^1.3.0"
+httpx = "^0.28.1"
+asgi-lifespan = "^2.1.0"
+
+[tool.black]
+line-length = 79
+target-version = ["py312"]
+skip-string-normalization = true
+
+[tool.ruff]
+line-length = 79
+fix = true
+select = ["E", "F", "I", "UP", "ASYNC"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.flake8]
+max-line-length = 79
+extend-ignore = ["E203", "W503"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
