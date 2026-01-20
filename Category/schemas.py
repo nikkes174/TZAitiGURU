@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from typing import Optional
-
 from pydantic import BaseModel
 
 
@@ -13,7 +11,7 @@ class CategoryCreate(BaseModel):
 class CategoryRead(BaseModel):
     id: int
     name: str
-    parent_id: Optional[int]
+    parent_id: int | None
 
     class Config:
         from_attributes = True
