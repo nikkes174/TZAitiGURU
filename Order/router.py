@@ -1,4 +1,3 @@
-from typing import List
 
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -45,7 +44,7 @@ async def add_product_to_order(
 
 @router.get(
     "/reports/total-by-customers",
-    response_model=List[OrderTotalByCustomer],
+    response_model=list[OrderTotalByCustomer],
 )
 async def total_by_customers(
     db: AsyncSession = Depends(get_db),

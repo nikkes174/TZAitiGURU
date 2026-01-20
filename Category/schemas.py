@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 class CategoryCreate(BaseModel):
     name: str
-    parent_id: Optional[int] = None
+    parent_id: int | None = None
 
 
 class CategoryRead(BaseModel):
@@ -17,9 +17,6 @@ class CategoryRead(BaseModel):
 
     class Config:
         from_attributes = True
-
-
-from pydantic import BaseModel
 
 
 class CategoryChildrenCount(BaseModel):
